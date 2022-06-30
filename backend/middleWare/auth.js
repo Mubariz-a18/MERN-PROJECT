@@ -10,7 +10,7 @@ exports.isAuthenUser = catchAsyncError(async (req, res, next) => {
     if (!token) {
         return next(new ErrorHandler('please login to access this resource', 401))
     }
-    const deCodedData = jwt.verify(token, process.env.JWT_SECRET)
+    const deCodedData = jwt.verify(token, "CFKGVhFTDMKJgyjfrDtfJHbhgTYG")
 
     req.user = await userModel.findById(deCodedData.id)
 

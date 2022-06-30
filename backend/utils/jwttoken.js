@@ -9,7 +9,7 @@ const jwtToken = (user, statusCode, res) => {
 
     //generating ccokie options by giving
     const options = {
-        expires: new Date(Date.now() + process.env.EXPIRE_COOKIE * 24 * 60 * 60 * 1000),
+        expires: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
         httpOnly: true
     }
     res.status(statusCode).cookie('token', token, options).json({sucess: true, user, token})
